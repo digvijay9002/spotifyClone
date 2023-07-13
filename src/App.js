@@ -24,7 +24,7 @@ export default function App() {
 
   return (
     <div>
-      <BrowserRouter>
+      <BrowserRouter basename="/spotifyClone">
         <Routes>
           <Route path="/" element={token ? <Spotify /> : <Login />}>
             <Route path="/Spotify" element={<Spotify />} />
