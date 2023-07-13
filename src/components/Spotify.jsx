@@ -26,6 +26,7 @@ export default function Spotify() {
     };
     getUserInfo();
   }, [dispatch, token]);
+
   return (
     <Container>
       <div className="spotify__body">

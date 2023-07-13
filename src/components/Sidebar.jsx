@@ -4,6 +4,10 @@ import { IoLibrary } from "react-icons/io5";
 import { MdHomeFilled, MdSearch } from "react-icons/md";
 import Playlists from "./Playlists";
 export default function Sidebar({ tok }) {
+  const getPlay = (items) => {
+    console.log("items", items);
+  };
+
   return (
     <Container>
       <div className="top__links">
@@ -16,7 +20,7 @@ export default function Sidebar({ tok }) {
         <ul>
           <li>
             <MdHomeFilled />
-            <span>Home</span> 
+            <span>Home</span>
           </li>
           <li>
             <MdSearch />
@@ -28,7 +32,7 @@ export default function Sidebar({ tok }) {
           </li>
         </ul>
       </div>
-      <Playlists tok={tok} />
+      <Playlists tok={tok} getPlay={getPlay} />
     </Container>
   );
 }

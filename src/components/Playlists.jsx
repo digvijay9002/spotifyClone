@@ -4,8 +4,9 @@ import axios from "axios";
 import { reducerCases } from "../utils/Constants";
 import styled from "styled-components";
 
-export default function Playlists() {
+export default function Playlists(props) {
   const [{ token, playlists }, dispatch] = useStateProvider();
+  const { getPlay } = props;
   useEffect(() => {
     const getPlaylistData = async () => {
       const response = await axios.get(
@@ -18,6 +19,7 @@ export default function Playlists() {
         }
       );
       const { items } = response.data;
+      getPlay(items);
       const playlists = items.map(({ name, id }) => {
         return { name, id };
       });
@@ -67,5 +69,3 @@ const Container = styled.div`
     }
   }
 `;
-
-
